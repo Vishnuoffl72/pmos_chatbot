@@ -22,11 +22,11 @@ export class ApiService {
   constructor(private http: HttpClient) { }
 
   sendMessage(message: string): Observable<ChatResponse> {
-    return this.http.post<ChatResponse>(`${this.baseUrl}/chat`, { message });
+    return this.http.post<ChatResponse>(`${this.baseUrl}/api/chat`, { message });
   }
 
   predictRisk(data: any): Observable<PredictResponse> {
-    return this.http.post<PredictResponse>(`${this.baseUrl}/predict`, data);
+    return this.http.post<PredictResponse>(`${this.baseUrl}/api/predict`, data);
   }
 }
 
