@@ -1,6 +1,6 @@
 # PMOS Health Assistant & Risk Prediction System
 
-A college project for the **Statistics Department** studying the **Reproductive and Metabolic Impacts of PMOS (Polyendocrine Metabolic Ovarian Syndrome / PCOS) in Adult Women (Ages 17–40)**.
+The Project is about **Reproductive and Metabolic Impacts of PMOS (Polyendocrine Metabolic Ovarian Syndrome / PCOS) in Adult Women (Ages 17–40)**.
 
 This project consists of two core features:
 1. **Data-Driven Chat Assistant**: Answers user inquiries utilizing statistical distributions and clinical correlations derived directly from the survey research dataset.
