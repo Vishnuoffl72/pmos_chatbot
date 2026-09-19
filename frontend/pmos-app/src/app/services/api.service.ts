@@ -17,7 +17,7 @@ export interface ChatResponse {
   providedIn: 'root'
 })
 export class ApiService {
-  private baseUrl = 'http://localhost:8000/api';
+  private baseUrl = 'https://pmos-chatbot-backend.onrender.com';
 
   constructor(private http: HttpClient) { }
 
