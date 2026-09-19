@@ -1,0 +1,228 @@
+<div class="predict-container">
+  <div class="header">
+    <h2>PMOS Risk Assessment</h2>
+    <p>Fill in your health details to assess your PMOS risk</p>
+  </div>
+
+  <form *ngIf="!result" (ngSubmit)="onSubmit()" #predictForm="ngForm" class="assessment-form">
+    
+    <div class="section-card">
+      <h3>Section 1: Basic Information</h3>
+      <div class="form-grid">
+        <div class="form-group">
+          <label>Age (17-40)</label>
+          <input type="number" name="age" [(ngModel)]="formData.age" min="17" max="40" required>
+        </div>
+        <div class="form-group">
+          <label>Weight (kg)</label>
+          <input type="number" name="weight" [(ngModel)]="formData.weight" required>
+        </div>
+        <div class="form-group">
+          <label>Height (cm)</label>
+          <input type="number" name="height" [(ngModel)]="formData.height" required>
+        </div>
+        <div class="form-group">
+          <label>Residential Location</label>
+          <select name="location" [(ngModel)]="formData.location" required>
+            <option value="">Select...</option>
+            <option value="Urban (City / Tier-1 or Tier-2 city)">Urban</option>
+            <option value="Semi-Urban (Town / Suburban area)">Semi-Urban</option>
+            <option value="Rural (Village / Remote area)">Rural</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Marital Status</label>
+          <select name="maritalStatus" [(ngModel)]="formData.maritalStatus" required>
+            <option value="">Select...</option>
+            <option value="Unmarried">Unmarried</option>
+            <option value="Married">Married</option>
+            <option value="Divorced">Divorced</option>
+            <option value="Widowed">Widowed</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-card">
+      <h3>Section 2: Menstrual Health</h3>
+      <div class="form-grid">
+        <div class="form-group">
+          <label>Age of first menstrual cycle</label>
+          <input type="number" name="firstCycleAge" [(ngModel)]="formData.firstCycleAge" required>
+        </div>
+        <div class="form-group radio-group">
+          <label>Menstrual cycle regularity</label>
+          <div>
+            <label><input type="radio" name="regularity" [(ngModel)]="formData.cycleRegularity" value="Regular"> Regular</label>
+            <label><input type="radio" name="regularity" [(ngModel)]="formData.cycleRegularity" value="Irregular"> Irregular</label>
+          </div>
+        </div>
+        <div class="form-group radio-group">
+          <label>Have you ever been pregnant?</label>
+          <div>
+            <label><input type="radio" name="pregnancy" [(ngModel)]="formData.pregnancyHistory" value="No"> No</label>
+            <label><input type="radio" name="pregnancy" [(ngModel)]="formData.pregnancyHistory" value="Yes"> Yes</label>
+            <label><input type="radio" name="pregnancy" [(ngModel)]="formData.pregnancyHistory" value="Currently Pregnant"> Currently Pregnant</label>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Number of children</label>
+          <input type="number" name="numChildren" [(ngModel)]="formData.numChildren" min="0" max="10">
+        </div>
+      </div>
+    </div>
+
+    <div class="section-card">
+      <h3>Section 3: Family History</h3>
+      <div class="form-group radio-group">
+        <label>Family history of PMOS</label>
+        <div>
+          <label><input type="radio" name="familyHist" [(ngModel)]="formData.familyHistory" value="Yes"> Yes</label>
+          <label><input type="radio" name="familyHist" [(ngModel)]="formData.familyHistory" value="No"> No</label>
+          <label><input type="radio" name="familyHist" [(ngModel)]="formData.familyHistory" value="Unsure"> Unsure</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-card">
+      <h3>Section 4: Lifestyle</h3>
+      <div class="form-grid">
+        <div class="form-group">
+          <label>Junk food frequency</label>
+          <select name="junkFood" [(ngModel)]="formData.junkFoodFreq" required>
+            <option value="">Select...</option>
+            <option value="Never">Never</option>
+            <option value="1-2 times a week">1-2 times a week</option>
+            <option value="3 -4 times a week">3-4 times a week</option>
+            <option value="Daily">Daily</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Chicken consumption</label>
+          <select name="chicken" [(ngModel)]="formData.chickenFreq" required>
+            <option value="">Select...</option>
+            <option value="Never">Never</option>
+            <option value="Less than once a week">Less than once a week</option>
+            <option value="1–2 times a week">1-2 times a week</option>
+            <option value="3–5 times a week">3-5 times a week</option>
+            <option value="Daily">Daily</option>
+          </select>
+        </div>
+        <div class="form-group full-width">
+          <label>Food pattern</label>
+          <select name="foodPattern" [(ngModel)]="formData.foodPattern" required>
+            <option value="">Select...</option>
+            <option value="I eat all my meals on a strict, fixed schedule every day.">I eat all my meals on a strict, fixed schedule every day.</option>
+            <option value="I eat normal meals but frequently eat junk food snacks late at night.">I eat normal meals but frequently eat junk food snacks late at night.</option>
+            <option value="I eat small meals throughout the day rather than fixed large meals.">I eat small meals throughout the day rather than fixed large meals.</option>
+            <option value="My meal timings vary heavily, and I frequently skip main meals.">My meal timings vary heavily, and I frequently skip main meals.</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Exercise frequency</label>
+          <select name="exercise" [(ngModel)]="formData.exerciseFreq" required>
+            <option value="">Select...</option>
+            <option value="No Regular Exercise">No Regular Exercise</option>
+            <option value="1-2 times a week">1-2 times a week</option>
+            <option value="3-4 times a week">3-4 times a week</option>
+            <option value="Daily">Daily</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-card">
+      <h3>Section 5: Mental & Physical Health</h3>
+      <div class="form-grid">
+        <div class="form-group">
+          <label>Mood/depression frequency</label>
+          <select name="mood" [(ngModel)]="formData.moodFrequency" required>
+            <option value="">Select...</option>
+            <option value="Never">Never</option>
+            <option value="Occasionally (a few times a month)">Occasionally</option>
+            <option value="Frequently (multiple times a week)">Frequently</option>
+            <option value="Constantly (almost every day)">Constantly</option>
+          </select>
+        </div>
+        <div class="form-group full-width">
+          <label>Physical/hormonal symptoms</label>
+          <select name="symptoms" [(ngModel)]="formData.physicalSymptoms" required>
+            <option value="">Select...</option>
+            <option value="None of the Above">None of the Above</option>
+            <option value="Severe or persistent acne (especially along the jawline or back)">Severe or persistent acne</option>
+            <option value="Excess facial hair growth (Hirsutism on chin, upper lip, or sideburns)">Excess facial hair growth (Hirsutism)</option>
+            <option value="Excess body hair growth (on chest, stomach, or back)">Excess body hair growth</option>
+            <option value="Severe hair thinning or scalp hair loss (female-pattern baldness)">Severe hair thinning or scalp hair loss</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-card">
+      <h3>Section 6: Sleep</h3>
+      <div class="form-grid">
+        <div class="form-group">
+          <label>Sleep hours</label>
+          <select name="sleepHrs" [(ngModel)]="formData.sleepHours" required>
+            <option value="">Select...</option>
+            <option value="Less than 5 hours">Less than 5 hours</option>
+            <option value="5 to 6 hours">5 to 6 hours</option>
+            <option value="7 to 8 hours">7 to 8 hours</option>
+            <option value="More than 8 hours">More than 8 hours</option>
+          </select>
+        </div>
+        <div class="form-group full-width checkbox-group">
+          <label>Sleep issues (select all that apply)</label>
+          <div class="checkbox-grid">
+            <label><input type="checkbox" name="sleepNone" [(ngModel)]="formData.sleepIssues.none"> None of the above</label>
+            <label><input type="checkbox" name="sleepFall" [(ngModel)]="formData.sleepIssues.difficultyFalling"> Difficulty falling asleep</label>
+            <label><input type="checkbox" name="sleepFreq" [(ngModel)]="formData.sleepIssues.wakingFrequently"> Waking up frequently</label>
+            <label><input type="checkbox" name="sleepEarly" [(ngModel)]="formData.sleepIssues.wakingEarly"> Waking up too early</label>
+            <label><input type="checkbox" name="sleepSnore" [(ngModel)]="formData.sleepIssues.snoring"> Severe snoring</label>
+            <label><input type="checkbox" name="sleepTired" [(ngModel)]="formData.sleepIssues.fatigued"> Feeling excessively tired</label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="error-msg" *ngIf="errorMsg">{{ errorMsg }}</div>
+
+    <button type="submit" class="submit-btn" [disabled]="!predictForm.valid || isLoading">
+      <span *ngIf="!isLoading">Assess My Risk</span>
+      <span *ngIf="isLoading" class="spinner"></span>
+      <span *ngIf="isLoading">Processing...</span>
+    </button>
+  </form>
+
+  <!-- Results Panel -->
+  <div class="result-panel" *ngIf="result">
+    <div class="result-header">
+      <h3>Assessment Results</h3>
+    </div>
+    
+    <div class="gauge-container">
+      <div class="gauge" [style.borderColor]="getRiskColor(result.risk_level)">
+        <span class="score">{{ (result.risk_score * 100).toFixed(0) }}%</span>
+        <span class="level" [style.color]="getRiskColor(result.risk_level)">{{ result.risk_level }} Risk</span>
+      </div>
+    </div>
+
+    <div class="result-details">
+      <div class="detail-section">
+        <h4>Contributing Factors</h4>
+        <ul>
+          <li *ngFor="let factor of result.factors">{{ factor }}</li>
+        </ul>
+      </div>
+
+      <div class="detail-section">
+        <h4>Recommendations</h4>
+        <ul>
+          <li *ngFor="let rec of result.recommendations">{{ rec }}</li>
+        </ul>
+      </div>
+    </div>
+
+    <button class="reset-btn" (click)="resetForm()">Try Again</button>
+  </div>
+</div>

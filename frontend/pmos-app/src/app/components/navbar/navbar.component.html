@@ -1,0 +1,20 @@
+<nav class="navbar">
+  <div class="nav-container">
+    <div class="logo">
+      <a routerLink="/">PMOS Health Assistant</a>
+    </div>
+    
+    <div class="hamburger" (click)="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <ul class="nav-links" [class.active]="isMenuOpen">
+      <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="toggleMenu()">Home</a></li>
+      <li><a routerLink="/chat" routerLinkActive="active" (click)="toggleMenu()">Chat</a></li>
+      <li><a routerLink="/predict" routerLinkActive="active" (click)="toggleMenu()">Predict Risk</a></li>
+    </ul>
+  </div>
+</nav>
+

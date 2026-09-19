@@ -1,0 +1,145 @@
+.home-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  color: #1e293b;
+}
+
+.hero {
+  text-align: center;
+  padding: 4rem 1rem;
+  background-color: #f0fdfa;
+  border-radius: 16px;
+  margin-bottom: 3rem;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  color: #0d9488;
+  margin-bottom: 1rem;
+}
+
+.hero .subtitle {
+  font-size: 1.5rem;
+  color: #0f766e;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+
+.hero .description {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #475569;
+}
+
+.features {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 4rem;
+  flex-wrap: wrap;
+}
+
+.feature-card {
+  flex: 1;
+  min-width: 300px;
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  border-top: 4px solid #0d9488;
+  transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+}
+
+.feature-card .icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.feature-card h2 {
+  color: #0d9488;
+  margin-bottom: 1rem;
+}
+
+.feature-card p {
+  color: #475569;
+  margin-bottom: 2rem;
+  line-height: 1.5;
+}
+
+.btn {
+  background-color: #0d9488;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn:hover {
+  background-color: #0f766e;
+}
+
+.info-section {
+  background: white;
+  padding: 3rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  margin-bottom: 4rem;
+}
+
+.info-section h2 {
+  color: #0d9488;
+  margin-bottom: 1.5rem;
+}
+
+.info-section p {
+  line-height: 1.8;
+  font-size: 1.1rem;
+  color: #334155;
+}
+
+.stats-section {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.stat-card {
+  flex: 1;
+  min-width: 200px;
+  text-align: center;
+  padding: 2rem;
+  background-color: #f0fdfa;
+  border-radius: 12px;
+  border: 1px solid #ccfbf1;
+}
+
+.stat-icon {
+  font-size: 2.5rem;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.stat-card h3 {
+  color: #0f766e;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.stat-card p {
+  color: #475569;
+}
+
